@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes, Link } from 'react-router-dom'
+import './App.css'
+import React from 'react'
+
+import {Home} from "./pages/Home"
+import {Book} from "./pages/Book"
+import {Abouts} from "./pages/Abouts"
+import {Contact} from "./pages/Contact"
+import {BookList} from "./pages/BookList"
+import {NewBook} from "./pages/Newbook"
+import {Notfound} from "./pages/Notfound"
+import {BookLayout} from "./pages/BookLayout"
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+   
+    <>
+
+  <nav>
+    <ul>
+      <li><Link to="/">Home</Link></li>
+      <li><Link to="/book">Book</Link></li>
+    </ul>
+  </nav>
+
+    <Routes>
+      <Route path="/" element={<Home />} />
+    
+      <Route path="/book" element={<BookLayout/>}>
+      <Route index element={<BookList />} />
+      <Route path=":id" element={<Book />} />
+      <Route path="new" element={<NewBook />} />
+      </Route>
+
+      <Route path="/contact" element={<Contact />} />
+      <Route path="/book" element={<BookList />} />
+      <Route path="/about" element={<Abouts />} />
+      <Route path="*" element={<Notfound/>}/>
+
+    </Routes>
+
+
+    </>
+  )
 }
 
 export default App;
