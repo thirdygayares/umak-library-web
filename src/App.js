@@ -10,7 +10,14 @@ import {BookList} from "./pages/BookList"
 import {NewBook} from "./pages/Newbook"
 import {Notfound} from "./pages/Notfound"
 import {BookLayout} from "./pages/BookLayout"
+
+// Admin
 import {Login} from "./admin/Login"
+import {Sidebar} from "./admin/Sidebar"
+import {Admin} from "./admin/Admin"
+import {Borrowers} from "./admin/Borrowers"
+
+
 
 function App() {
   return (
@@ -40,8 +47,19 @@ function App() {
 
       {/* admin */}
       <Route path="/login" element={<Login />} />
+    
+
+      <Route path="/umaklibrary" element={<Sidebar/>}>
+      <Route index element={<Admin />} />
+      <Route path="borrowers" element={<Borrowers />} />
+      </Route>
+
+
 
     </Routes>
+
+
+ 
 
 
     </>

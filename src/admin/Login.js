@@ -17,8 +17,9 @@ const stylesParent = {
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
       height:"100vh",
-      paddingTop: '150px',
+      paddingTop: '10%',
       padding: "0 2em",
+      
    
     },
     marginHalf: {
