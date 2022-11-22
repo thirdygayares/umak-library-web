@@ -65,7 +65,7 @@ export function Sidebar() {
                                         <ul className="list-unstyled components text-dark"  >
 
                                             <li style={styles.ulli}>
-                                                <Link to="/umaklibrary" className='text-dark'>Admin</Link>
+                                                <Link to="/" className='text-dark'>Admin</Link>
                                             </li>
 
                                             <li>

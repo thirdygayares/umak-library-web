@@ -16,6 +16,8 @@ import {Login} from "./admin/Login"
 import {Sidebar} from "./admin/Sidebar"
 import {Admin} from "./admin/Admin"
 import {Borrowers} from "./admin/Borrowers"
+import { BorrowerNew } from "./admin/Borrowers_New"
+
 
 
 
@@ -32,7 +34,7 @@ function App() {
   </nav> */}
 
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/sample" element={<Home />} />
     
       <Route path="/book" element={<BookLayout/>}>
       <Route index element={<BookList />} />
@@ -49,9 +51,11 @@ function App() {
       <Route path="/login" element={<Login />} />
     
 
-      <Route path="/umaklibrary" element={<Sidebar/>}>
+      <Route path="/" element={<Sidebar/>}>
       <Route index element={<Admin />} />
       <Route path="borrowers" element={<Borrowers />} />
+      <Route path="addborrowers" element={< BorrowerNew  />} />
+
       </Route>
 
 
